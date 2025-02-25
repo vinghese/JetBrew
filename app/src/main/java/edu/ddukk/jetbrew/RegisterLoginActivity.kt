@@ -3,6 +3,7 @@ package edu.ddukk.jetbrew
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -61,6 +62,7 @@ class RegisterLoginActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
@@ -73,15 +75,17 @@ class RegisterLoginActivity : ComponentActivity() {
                         TopAppBar(
                             title = { Text("Register/Login") },
                             colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
+
                         )
                     }) {
 //                    innerPadding ->
 //                    innerPaddingGlobal= innerPadding
 //                    AuthScreen(viewModel, innerPadding)
 //                    AuthScreen(viewModel) {
-                        AuthScreen(viewModelHilt) { }
-                        startActivity(Intent(this, MainActivity::class.java))
-                        finish()
+                        AuthScreen(viewModelHilt) {
+                            startActivity(Intent(this, MainActivity::class.java))
+                            finish()
+                        }
                     }
                 }
             }
