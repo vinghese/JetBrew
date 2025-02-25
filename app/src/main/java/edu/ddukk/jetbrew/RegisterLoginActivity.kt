@@ -79,9 +79,10 @@ class RegisterLoginActivity : ComponentActivity() {
 //                    innerPaddingGlobal= innerPadding
 //                    AuthScreen(viewModel, innerPadding)
 //                    AuthScreen(viewModel) {
-                        AuthScreen(viewModelHilt) { }
-                        startActivity(Intent(this, MainActivity::class.java))
-                        finish()
+                        AuthScreen(viewModelHilt) {
+                            startActivity(Intent(this, MainActivity::class.java))
+                            finish()
+                        }
                     }
                 }
             }
