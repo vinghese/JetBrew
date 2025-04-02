@@ -68,6 +68,9 @@ dependencies {
 //    implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.runtime.livedata)
     ksp ("androidx.room:room-compiler:2.6.1")
 //    Dagger Hilt
 //    implementation(libs.hilt.android.compiler)

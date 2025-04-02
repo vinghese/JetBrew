@@ -37,7 +37,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
-import edu.ddukk.jetbrew.model.AppDatabase
+import edu.ddukk.jetbrew.room.AppDatabase
 import edu.ddukk.jetbrew.model.User
 import edu.ddukk.jetbrew.repository.AuthRepository
 import edu.ddukk.jetbrew.repository.AuthRepositoryHilt
@@ -71,7 +71,7 @@ class RegisterLoginActivity : ComponentActivity() {
                 JetBrewTheme {
                     Scaffold(topBar = {
                         TopAppBar(
-                            title = { Text("Register/Login") },
+                            title = { Text("Register/Login (ROOM)") },
                             colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
                         )
                     }) {
@@ -141,7 +141,10 @@ fun AuthScreen(viewModel: AuthViewModelHilt?, onLoginSuccess: () -> Unit) {
                 Toast.makeText(LocalContext.current, "Login Successful!", Toast.LENGTH_SHORT).show()
                 onLoginSuccess()
             }
-            if (viewModel?.registrationSuccess!!.value) Text("Registration Successful!", color = MaterialTheme.colorScheme.secondary)
+            if (viewModel?.registrationSuccess!!.value) {
+                Text("Registration Successful!", color = MaterialTheme.colorScheme.secondary)
+                Toast.makeText(LocalContext.current, "Registration Successfyl", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

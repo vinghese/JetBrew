@@ -1,15 +1,14 @@
-package edu.ddukk.jetbrew.model
+package edu.ddukk.jetbrew.modules
 
 import android.content.Context
-import androidx.room.Database
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import edu.ddukk.jetbrew.dao.UserDao
+import edu.ddukk.jetbrew.room.AppDatabase
 import javax.inject.Singleton
 
 @Module
